@@ -51,10 +51,12 @@
 		// Validate form entries
 		if ( '' != postcode ) {
 			$("#result").append(postcode + ' ');
+			/* Send postcode value to Phyton */
 		}
 	
 		if ( 'Choose a business type' != business ) {
 			$("#result").append(business + ' ');
+			/* Send business type to Phyton */
 		}
 		
 		if (( '' == postcode ) && ( 'Choose a business type' == business )) {
