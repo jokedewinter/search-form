@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="utf-8">
+	<title>Search form</title>
+	<link rel="stylesheet" href="css/main.css" />	
+</head>
+<body>
+
+<h1>Search form</h1>
+
+<form>
+	<fieldset>
+		<label for="postcode">Postcode</label>
+		<input id="postcode" type="text">
+	</fieldset>
+	
+	<fieldset>
+		<label for"business">Business type</label>
+		<select id="business">
+			<option>Choose a business type</option>
+			<option>Florist</option>
+			<option>Newsagent</option>
+			<option>Bakery</option>
+		</select>
+	</fieldset>
+	
+	<p id="error"></p>
+	
+	<button id="submit" type="submit">Search</button>
+</form>
+
+<p>You searched for: <span id="result"></span></p>
+
+<script src="js/jquery.min.js"></script>
+<script>
+	$("#submit").click(function(event) {
+		
+		event.preventDefault();
+		
+		// Collect form entries
+		var postcode = $("#postcode").val();
+		var business = $("#business").val();
+		var result = $("#result");
+		var error = $("#error");
+		
+		// Empty feedback fields
+		result.empty();
+		error.empty();
+		
+		// Validate form entries
+		if ( '' != postcode ) {
+			$("#result").append(postcode + ' ');
+		}
+	
+		if ( 'Choose a business type' != business ) {
+			$("#result").append(business + ' ');
+		}
+		
+		if (( '' == postcode ) && ( 'Choose a business type' == business )) {
+			$("#error").append('Please enter something to search.');
+		}
+	});
+</script>
+</body>
+</html>

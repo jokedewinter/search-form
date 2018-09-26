@@ -1,0 +1,51 @@
+body {
+	font-family: sans-serif;
+	width: 50%;
+	margin: 0 auto;
+}
+
+fieldset {
+	display: flex;
+	flex-direction: column;
+	align-items: flex-start;
+	border: none;
+	padding: 0;
+	margin-bottom: 1em;
+}
+
+fieldset > * {
+	width: 90%;
+	margin: 0.3em 0;
+	font-size: 16px;
+}
+
+input {
+	padding: 0.5em;
+}
+
+select {
+	height: 40px;
+}
+
+button {
+	display: inline-block;
+	cursor: pointer;
+	font-size: 12px;
+	font-weight: bold;
+	text-transform: uppercase;
+	letter-spacing: 1px;
+	background-color: #333;
+	color: #fff;
+	padding: 0.7em 1.5em;
+	border: none;
+	border-radius: 5px;
+}
+
+button:hover {
+	background-color: green;
+}
+
+#error {
+	font-size: 14;
+	color: peru;
+}
